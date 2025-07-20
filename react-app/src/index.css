@@ -1,0 +1,32 @@
+
+body {
+    padding: 0px;
+    margin: 0px;
+}
+
+nav {
+    height: 65px;
+    width: 100%;
+    background-color: #212121;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    padding-right: 20px;
+}
+
+p {
+    color: white;
+    margin-right: 20px;
+}
+
+button {
+    cursor: pointer;
+    color: white;
+    background-color: transparent;
+    border: none;
+}
+
+svg {
+    margin-right: 10px;
+    color: white;
+}

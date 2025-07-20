@@ -1,19 +1,28 @@
 import React from "react";
-import {Authenticator, defaultTheme, ThemeProvider} from "@aws-amplify/ui-react";
+import { Authenticator } from "@aws-amplify/ui-react";
 import '@aws-amplify/ui-react/styles.css';
+import "./index.css"
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faRightFromBracket, faUser} from "@fortawesome/free-solid-svg-icons";
 
 function App(): React.JSX.Element {
     return (
-        <ThemeProvider theme={defaultTheme}>
-            <Authenticator>
-                {({ signOut, user }) => (
-                    <main>
-                        <h1>Hello {user.username}</h1>
-                        <button onClick={signOut}>Sign out</button>
-                    </main>
-                )}
-            </Authenticator>
-        </ThemeProvider>
+        <Authenticator loginMechanisms={["email"]}>
+            {({ signOut, user }) => (
+                <main>
+                    <nav>
+                        <p>
+                            <FontAwesomeIcon icon={faUser}/>
+                            {user?.userId}
+                        </p>
+                        <button onClick={signOut}>
+                            <FontAwesomeIcon icon={faRightFromBracket}/>
+                            Log Out
+                        </button>
+                    </nav>
+                </main>
+            )}
+        </Authenticator>
     );
 }
 

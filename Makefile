@@ -16,6 +16,9 @@ terraform-destroy:
 terraform-show:
 	terraform -chdir=terraform show
 
+terraform-output:
+	terraform -chdir=terraform output
+
 terraform-fmt:
 	terraform -chdir=terraform fmt --recursive
 

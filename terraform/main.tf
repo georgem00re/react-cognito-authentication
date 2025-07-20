@@ -18,7 +18,7 @@ terraform {
 }
 
 locals {
-  cognito_user_pool_name = "MyExampleCognitoUserPool"
+  cognito_user_pool_name        = "MyExampleCognitoUserPool"
   cognito_user_pool_client_name = "MyExampleCognitoUserPoolClient"
 }
 
@@ -33,7 +33,7 @@ module "aws_cognito_user_pool" {
 }
 
 module "aws_cognito_user_pool_client" {
-  source = "./modules/aws_cognito_user_pool_client"
-  name   = local.cognito_user_pool_client_name
+  source       = "./modules/aws_cognito_user_pool_client"
+  name         = local.cognito_user_pool_client_name
   user_pool_id = module.aws_cognito_user_pool.id
 }

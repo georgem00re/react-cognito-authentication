@@ -16,8 +16,8 @@ resource "aws_cognito_user_pool" "this" {
   verification_message_template {
     // Cognito will send a 4-6 digit code to the user's email address.
     default_email_option = "CONFIRM_WITH_CODE"
-    email_subject = "Account Confirmation"
-    email_message = "Your confirmation code is {####}"
+    email_subject        = "Account Confirmation"
+    email_message        = "Your confirmation code is {####}"
   }
 
   // Users must provide an email during sign-up.

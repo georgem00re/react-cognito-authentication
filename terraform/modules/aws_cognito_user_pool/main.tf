@@ -2,8 +2,8 @@
 resource "aws_cognito_user_pool" "this" {
   name = var.name
 
-  // Users will be required to provide their email addresses to log in.
-  username_attributes = ["email"]
+  // Users will be able to log in using either their username or email address.
+  alias_attributes = ["email"]
 
   // Cognito will automatically verify email addresses by sending a code after sign-up.
   auto_verified_attributes = ["email"]
